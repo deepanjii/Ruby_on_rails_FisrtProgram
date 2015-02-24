@@ -1,12 +1,17 @@
 Rails.application.routes.draw do
-  get 'home/home'
+  resources :users
+
+  resources :blogs
+
+  get "welcome"=>"home#home"
+  get "newpage"=>"home#about"
+  get "contactuspage"=>"home#contact"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
